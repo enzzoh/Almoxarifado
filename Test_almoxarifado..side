@@ -2,7 +2,7 @@
   "id": "9739a825-c1ba-41cd-893c-d3dbd418d0db",
   "version": "2.0",
   "name": "Test_almoxarifado.",
-  "url": "http://127.0.0.1:5500/index.html",
+  "url": "",
   "tests": [{
     "id": "735078f0-cdd7-4840-80b4-587028390095",
     "name": "Teste_RN01",
@@ -492,6 +492,60 @@
         ["css=#Estoque", "css:finder"],
         ["xpath=//input[@id='Estoque']", "xpath:attributes"],
         ["xpath=//div[2]/div[2]/div/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1b02422c-2364-45f3-b3ac-02630716bb68",
+    "name": "teste_RN11",
+    "commands": [{
+      "id": "ab5ccbbe-10da-4e33-b640-0478c3f1865f",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5500/Almoxarifado-main/Almoxarifado-main/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3110d04d-ac67-486a-83ea-0aac092866e9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "596x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0c5c16d-1cf0-4d32-ab35-f5ef98698dd0",
+      "comment": "",
+      "command": "click",
+      "target": "id=CodigoProduto",
+      "targets": [
+        ["id=CodigoProduto", "id"],
+        ["css=#CodigoProduto", "css:finder"],
+        ["xpath=//input[@id='CodigoProduto']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "751bd167-aef5-4318-a8bf-f7600f8fa11f",
+      "comment": "",
+      "command": "type",
+      "target": "id=CodigoProduto",
+      "targets": [
+        ["id=CodigoProduto", "id"],
+        ["css=#CodigoProduto", "css:finder"],
+        ["xpath=//input[@id='CodigoProduto']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "b8ca8963-06d5-4f7e-949a-242d7caf5985",
+      "comment": "",
+      "command": "click",
+      "target": "id=imgEstoque",
+      "targets": [
+        ["id=imgEstoque", "id"],
+        ["css=#imgEstoque", "css:finder"],
+        ["xpath=//img[@id='imgEstoque']", "xpath:attributes"],
+        ["xpath=//div[4]/div/img", "xpath:position"]
       ],
       "value": ""
     }]

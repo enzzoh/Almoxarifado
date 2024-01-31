@@ -5613,24 +5613,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Piteu\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tarde.cetafest\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Piteu\\source\\repos\\TesteAlmoxarifado\\TesteAlmoxarifado\\TesteAlmoxarifado.csproj",
+      "projectUniqueName": "C:\\Users\\tarde.cetafest\\Documents\\Almoxarifado\\ENZZO\\TesteAlmoxarifado\\TesteAlmoxarifado\\TesteAlmoxarifado.csproj",
       "projectName": "TesteAlmoxarifado",
-      "projectPath": "C:\\Users\\Piteu\\source\\repos\\TesteAlmoxarifado\\TesteAlmoxarifado\\TesteAlmoxarifado.csproj",
-      "packagesPath": "C:\\Users\\Piteu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Piteu\\source\\repos\\TesteAlmoxarifado\\TesteAlmoxarifado\\obj\\",
+      "projectPath": "C:\\Users\\tarde.cetafest\\Documents\\Almoxarifado\\ENZZO\\TesteAlmoxarifado\\TesteAlmoxarifado\\TesteAlmoxarifado.csproj",
+      "packagesPath": "C:\\Users\\tarde.cetafest\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tarde.cetafest\\Documents\\Almoxarifado\\ENZZO\\TesteAlmoxarifado\\TesteAlmoxarifado\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Piteu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\tarde.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5705,7 +5700,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

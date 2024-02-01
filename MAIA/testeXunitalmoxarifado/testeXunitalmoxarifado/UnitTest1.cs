@@ -25,7 +25,54 @@ public class SuiteTests : IDisposable
     {
         driver.Quit();
     }
+
     [Fact]
+    public void TesteRN01()
+
+    {
+        var resultadoesperado = "background-color: red";
+        driver.Navigate().GoToUrl("https://guilhermeveigalopes.github.io/almoxarifado/");
+        driver.Manage().Window.Size = new System.Drawing.Size(945, 1020);
+
+        driver.FindElement(By.CssSelector("btnGravar")).Click();
+
+
+        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("style")));
+
+        var NomeFuncionario = driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("style");
+
+
+        Assert.Equal(resultadoesperado, NomeFuncionario);
+
+    }
+    [Fact]
+    public void TesteRN02()
+    {
+        var ResultadoEsperado = "background-color: rgb(127, 255, 212);";
+        driver.Navigate().GoToUrl("https://guilhermeveigalopes.github.io/almoxarifado/");
+        driver.Manage().Window.Size = new System.Drawing.Size(945, 1020);
+        driver.FindElement(By.Id("idFuncionario")).Click();
+        driver.FindElement(By.Id("idFuncionario")).Click();
+        driver.FindElement(By.Id("idFuncionario")).Click();
+        {
+            var element = driver.FindElement(By.Id("idFuncionario"));
+            Actions builder = new Actions(driver);
+            builder.DoubleClick(element).Perform();
+        }
+        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("idFuncionario")).GetAttribute("style")));
+
+        var NomeFuncionario = driver.FindElement(By.Id("idFuncionario")).GetAttribute("style");
+
+
+        Assert.Equal(ResultadoEsperado, NomeFuncionario);
+
+    }
+
+
+
+        [Fact]
     public void TesteRN03()
     {
         driver.Navigate().GoToUrl("https://guilhermeveigalopes.github.io/almoxarifado/");
@@ -137,13 +184,12 @@ public class SuiteTests : IDisposable
         driver.FindElement(By.Id("Estoque")).Click();
         driver.FindElement(By.Id("Estoque")).SendKeys("1111");
 
-        var wait3 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        wait3.Until(driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("Estoque")).GetAttribute("value")));
+    
 
         string estoque = driver.FindElement(By.Id("Estoque")).GetAttribute("value");
 
 
-        Assert.NotEqual("1111", estoque);
+        Assert.Equal("1111", estoque);
     }
 
    
@@ -163,6 +209,7 @@ public class SuiteTests : IDisposable
 
 
         Assert.NotEqual("23123", estoque);
+        driver.Close();
     }
     [Fact]
     public void TesteRN10()
@@ -176,38 +223,35 @@ public class SuiteTests : IDisposable
         driver.FindElement(By.Id("Quantidade")).SendKeys("-2");
        
 
+
+
         var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        wait.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("Estoque")).GetAttribute("value")));
-        string estoque = driver.FindElement(By.Id("Estoque")).GetAttribute("value");
+        wait.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("Quantidade")).GetAttribute("value")));
+        string estoque = driver.FindElement(By.Id("Quantidade")).GetAttribute("value");
 
         Assert.NotEqual("-2", estoque);
-
+        driver.Close();
     }
     [Fact]
-    public void TesteRN11()
+    public void TesteRN112()
     {
         driver.Navigate().GoToUrl("https://guilhermeveigalopes.github.io/almoxarifado/");
-
-        var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        wait2.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
-        string estoque1 = driver.FindElement(By.Id("verde")).GetAttribute("value");
-
-        driver.FindElement(By.Id("codigoProduto")).Click();
-        driver.FindElement(By.Id("codigoProduto")).SendKeys("10");
-        driver.FindElement(By.Id("Estoque")).Click();
-        driver.FindElement(By.Id("Estoque")).Click();
-        driver.FindElement(By.Id("Estoque")).SendKeys("10");
-        driver.FindElement(By.Id("Quantidade")).Click();
-        driver.FindElement(By.Id("Quantidade")).SendKeys("1");
-
-
+        driver.Manage().Window.Size = new System.Drawing.Size(1616, 868);
 
         var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         wait.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
-        string estoque = driver.FindElement(By.Id("verde")).GetAttribute("value");
+        string quadradinho1 = driver.FindElement(By.Id("verde")).GetAttribute("value");
 
-        Assert.NotEqual(estoque1, estoque); 
-        driver.Close();
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+
+        var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait2.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
+        string quadradinho2 = driver.FindElement(By.Id("verde")).GetAttribute("value");
+
+        Assert.NotEqual(quadradinho1 , quadradinho2);   
 
     }
     [Fact]
@@ -216,9 +260,9 @@ public class SuiteTests : IDisposable
         // ... (código anterior)
 
         // Capture os atributos CSS antes de clicar nos elementos
-        string urgenteBeforeClick = driver.FindElement(By.Id("urgente")).GetCssValue("attributeName");
-        string medioBeforeClick = driver.FindElement(By.Id("medio")).GetCssValue("attributeName");
-        string baixoBeforeClick = driver.FindElement(By.Id("baixo")).GetCssValue("attributeName");
+        string urgenteBeforeClick = driver.FindElement(By.Id("urgente")).GetCssValue("Style");
+        string medioBeforeClick = driver.FindElement(By.Id("medio")).GetCssValue("Style");
+        string baixoBeforeClick = driver.FindElement(By.Id("baixo")).GetCssValue("Style");
 
         // Clique nos elementos
         driver.FindElement(By.Id("urgente")).Click();
@@ -226,14 +270,93 @@ public class SuiteTests : IDisposable
         driver.FindElement(By.Id("baixo")).Click();
 
         // Capture os atributos CSS após clicar nos elementos
-        string urgenteAfterClick = driver.FindElement(By.Id("urgente")).GetCssValue("attributeName");
-        string medioAfterClick = driver.FindElement(By.Id("medio")).GetCssValue("attributeName");
-        string baixoAfterClick = driver.FindElement(By.Id("baixo")).GetCssValue("attributeName");
+        string urgenteAfterClick = driver.FindElement(By.Id("urgente")).GetCssValue("Style");
+        string medioAfterClick = driver.FindElement(By.Id("medio")).GetCssValue("Style");
+        string baixoAfterClick = driver.FindElement(By.Id("baixo")).GetCssValue("Style");
 
         // Verifique se os atributos mudaram
         Assert.NotEqual(urgenteBeforeClick, urgenteAfterClick);
         Assert.NotEqual(medioBeforeClick, medioAfterClick);
         Assert.NotEqual(baixoBeforeClick, baixoAfterClick);
+    }
+    [Fact]
+    public void TesteRN13()
+    {
+        driver.Navigate().GoToUrl("https://guilhermeveigalopes.github.io/almoxarifado/");
+        driver.Manage().Window.Size = new System.Drawing.Size(1050, 832);
+
+        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
+        string quadradinho1 = driver.FindElement(By.Id("verde")).GetAttribute("value");
+
+        driver.FindElement(By.Id("codigoProduto")).Click();
+        driver.FindElement(By.Id("codigoProduto")).SendKeys("10");
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        {
+            var element = driver.FindElement(By.Id("verde"));
+            Actions builder = new Actions(driver);
+            builder.DoubleClick(element).Perform();
+        }
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        driver.FindElement(By.Id("verde")).Click();
+        {
+            var element = driver.FindElement(By.Id("verde"));
+            Actions builder = new Actions(driver);
+            builder.DoubleClick(element).Perform();
+        }
+        driver.FindElement(By.Id("verde")).Click();
+
+        var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait2.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
+        string quadradinho2 = driver.FindElement(By.Id("verde")).GetAttribute("value");
+
+        Assert.NotEqual(quadradinho2, quadradinho1);
+    }
+    [Fact]
+    public void TesteRN14()
+    {
+        driver.Navigate().GoToUrl("https://guilhermeveigalopes.github.io/almoxarifado/");
+        driver.Manage().Window.Size = new System.Drawing.Size(1050, 832);
+
+        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
+        string quadradinho1 = driver.FindElement(By.Id("verde")).GetAttribute("value");
+
+        driver.FindElement(By.Id("idDepartamento")).Click();
+        driver.FindElement(By.Id("idDepartamento")).SendKeys("10");
+        driver.FindElement(By.Id("idFuncionario")).Click();
+        driver.FindElement(By.Id("idFuncionario")).SendKeys("10");
+        driver.FindElement(By.Id("categoriaMotivo")).Click();
+        {
+            var dropdown = driver.FindElement(By.Id("categoriaMotivo"));
+            dropdown.FindElement(By.XPath("//option[. = 'Gestão']")).Click();
+        }
+        driver.FindElement(By.Id("Motivo")).Click();
+        {
+            var dropdown = driver.FindElement(By.Id("Motivo"));
+            dropdown.FindElement(By.XPath("//option[. = 'Financeiro']")).Click();
+        }
+        driver.FindElement(By.Id("medio")).Click();
+        driver.FindElement(By.Id("codigoProduto")).Click();
+        driver.FindElement(By.Id("codigoProduto")).SendKeys("10");
+        driver.FindElement(By.Id("Quantidade")).Click();
+        driver.FindElement(By.Id("Quantidade")).SendKeys("7");
+        driver.FindElement(By.Id("Estoque")).Click();
+        driver.FindElement(By.Id("Estoque")).SendKeys("4");
+        driver.FindElement(By.CssSelector("#BtnInserirItens > span")).Click();
+        driver.FindElement(By.CssSelector("#BtnInserirItens > span")).Click();
+
+
+
+        var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait2.Until(Driver => !string.IsNullOrEmpty(driver.FindElement(By.Id("verde")).GetAttribute("value")));
+        string quadradinho2 = driver.FindElement(By.Id("verde")).GetAttribute("value");
+
+        Assert.NotEqual(quadradinho2, quadradinho1);
     }
 
 

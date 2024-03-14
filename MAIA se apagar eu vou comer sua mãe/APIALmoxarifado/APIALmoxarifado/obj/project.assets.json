@@ -2337,19 +2337,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\manha.cetafest\\.nuget\\packages\\": {}
+    "C:\\Users\\fusion\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manha.cetafest\\Documents\\MAIA se apagar eu vou comer sua mãe\\APIALmoxarifado\\APIALmoxarifado\\APIALmoxarifado.csproj",
+      "projectUniqueName": "C:\\Users\\fusion\\Documents\\GitHub\\Almoxarifado\\MAIA se apagar eu vou comer sua mãe\\APIALmoxarifado\\APIALmoxarifado\\APIALmoxarifado.csproj",
       "projectName": "APIALmoxarifado",
-      "projectPath": "C:\\Users\\manha.cetafest\\Documents\\MAIA se apagar eu vou comer sua mãe\\APIALmoxarifado\\APIALmoxarifado\\APIALmoxarifado.csproj",
-      "packagesPath": "C:\\Users\\manha.cetafest\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manha.cetafest\\Documents\\MAIA se apagar eu vou comer sua mãe\\APIALmoxarifado\\APIALmoxarifado\\obj\\",
+      "projectPath": "C:\\Users\\fusion\\Documents\\GitHub\\Almoxarifado\\MAIA se apagar eu vou comer sua mãe\\APIALmoxarifado\\APIALmoxarifado\\APIALmoxarifado.csproj",
+      "packagesPath": "C:\\Users\\fusion\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fusion\\Documents\\GitHub\\Almoxarifado\\MAIA se apagar eu vou comer sua mãe\\APIALmoxarifado\\APIALmoxarifado\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\manha.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fusion\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

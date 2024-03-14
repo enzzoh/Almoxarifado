@@ -115,7 +115,7 @@ namespace APIALmoxarifado.Controllers
                 if (produto?.photourl == null)
                 {
                     return Ok("Não existe falta cadastrada para o Produto");
-                }
+                } 
                 else
                 {
                     var dataBytes = System.IO.File.ReadAllBytes(produto.photourl);

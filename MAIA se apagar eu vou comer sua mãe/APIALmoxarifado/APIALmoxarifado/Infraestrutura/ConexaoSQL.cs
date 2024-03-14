@@ -7,14 +7,7 @@ namespace APIALmoxarifado.Infraestrutura
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
             =>
-              optionBuilder.UseSqlServer(
-                  @"Server=sql.bsite.net\MSSQL2016;" +
-                  "Database=maia_;" +
-                  "User id=maia_;" +
-                  "Password=123"
-
-
-              );
+              optionBuilder.UseSqlServer(@"Server=sql.bsite.net\MSSQL2016;" +"Database=dbAlmoxarifado;" +"User id=sa;" + "Password=senai.123" );
 
         public DbSet<Produto> Produto { get; set; }
     }
